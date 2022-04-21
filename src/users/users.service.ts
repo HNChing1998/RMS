@@ -7,6 +7,8 @@ import { UpdateUserDto } from "./update-users.dto";
 import { DeleteUserDto } from "./delete-users.dto";
 import { User } from "./user-entity";
 
+
+
 @Injectable()
 export class UsersService{
 
@@ -41,4 +43,25 @@ export class UsersService{
         
     }
 
+
+
+    private readonly users: User[] = [
+        {
+            ID: 1,
+            Fullname: 'Hosoba Naoki A. Ching',
+            Gender: 'Male',
+            Email: 'Sample@gmail.com',
+            Password: 'Sample123',
+            Institute: 'Institute of Computing',
+            Position: 'Student',
+            Type: 'Requestor',
+            isActive: true,
+        }
+    ];
+
+    async findOne(Email: string): Promise<User | undefined>{
+        return this.users.find(user => user.Email === Email);
+    }
+
+    
 }

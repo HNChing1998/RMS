@@ -15,6 +15,9 @@ export class User {
   Password: string;
 
   @Column()
+  Institute: string;
+
+  @Column()
   Gender: string;
 
   @Column()
